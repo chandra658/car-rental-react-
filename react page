@@ -1,0 +1,59 @@
+# car-rental
+
+A lightweight, zero-backend Single-Page Application (SPA) designed for personal financial management, expense categorization, and savings goal tracking with built-in role-based access control.
+
+---
+
+## Live Links & Resources
+
+* **Live Deployment (GitHub Pages)**:https://github.com/chandra658/car-rental-react-/new/main
+
+---
+
+## Overview
+
+Traditional personal finance tools often introduce friction through server-side latency or bloated interfaces. **Smart Budget Planner** provides an immediate, responsive ledger operating entirely in the browser. The platform separates self-serve personal finance tracking from platform-wide administrative monitoring while keeping user datasets fully isolated locally.
+
+---
+
+## Core Features
+
+### 1. Dual-Module System
+* **User Module**:
+  * Log income and expense transactions across dedicated categories (Housing & Rent, Groceries & Food, Utilities, Entertainment, Transit, Salary, Investments, Freelance, Other).
+  * View dynamic financial summaries: Total Income, Total Expenses, and Net Balance.
+  * Track monthly savings targets with an adaptive percentage progress bar.
+  * Reactive category expenditure breakdown visualized through Chart.js.
+  * Itemized chronological transaction log with inline deletion support.
+* **Admin Module**:
+  * Global system analytics tracking Total Registered Users, System Total Transactions, and Aggregate Platform Cash Flow.
+  * Central User Directory displaying account usernames, assigned roles, record volumes, and live net balances.
+  * Account governance allowing deletion of test/inactive users and their associated records while securing the root administrator profile.
+
+### 2. State Management & Data Privacy
+* **Local Persistence**: State handling using browser `localStorage` for credentials (`bp_users`), active sessions (`bp_session`), and target goals (`bp_goal_<username>`).
+* **User Data Scoping**: Transaction ledgers are sandboxed under `bp_records_<username>`, ensuring distinct user datasets remain completely private and isolated on the device.
+
+### 3. Responsive Layout
+* Built using modern **CSS Flexbox** for navigation alignment and **CSS Grid** (`repeat(auto-fit, minmax(220px, 1fr))`) for fluid metric reflow on mobile and desktop viewports.
+
+---
+
+## Technology Stack
+
+* **Frontend**: Pure HTML5, CSS3, Vanilla JavaScript
+* **Layout**: CSS Grid & CSS Flexbox
+* **Data Visualization**: Chart.js
+* **Storage Engine**: Browser `localStorage` (JSON-serialized)
+* **Deployment**: GitHub Pages (Zero Backend)
+
+---
+
+## Credentials (For Testing)
+
+| Role | Username | Password | Access Level |
+| :--- | :--- | :--- | :--- |
+| **Admin** | `admin` | `admin` | Platform aggregations & user directory management |
+| **User** | Self-registered via Sign Up | User-defined | Isolated personal dashboard & budget log |
+
+---
